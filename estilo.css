@@ -477,7 +477,7 @@ section {
 }
 .desc-grid {
   display: grid;
-  grid-template-columns: 1.0fr 0.5fr;
+  grid-template-columns: 1fr 0.5fr;
   gap: 5rem;
   align-items: center;
 }
@@ -746,9 +746,10 @@ section {
 }
 .video-inner {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
+  grid-template-columns: 1fr 1fr;
   gap: 5rem;
   align-items: center;
+  justify-items: center;
 }
 .video-text p {
   color: rgba(255, 255, 255, 0.7);
@@ -761,7 +762,6 @@ section {
   overflow: hidden;
   background: rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(0, 180, 216, 0.3);
-  aspect-ratio: 16/9;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -769,7 +769,14 @@ section {
   position: relative;
   cursor: pointer;
   transition: border-color 0.3s;
+  width: fit-content;
 }
+
+.video-player video {
+  width: auto;
+  height: 100%;
+}
+
 .video-player:hover {
   border-color: var(--ocean-teal);
 }
@@ -823,40 +830,6 @@ section {
   border-radius: 4px;
 }
 
-/* ── PROMPT ── */
-.prompt-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
-}
-.prompt-card {
-  background: var(--white);
-  border-radius: 10px;
-  padding: 1.8rem;
-  border-top: 3px solid var(--ocean-teal);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-  transition:
-    box-shadow 0.3s,
-    transform 0.3s;
-}
-.prompt-card:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  transform: translateY(-3px);
-}
-.prompt-card h4 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-dark);
-  margin-bottom: 0.5rem;
-}
-.prompt-card p {
-  border: 1px solid rgba(110, 109, 109, 0.1);
-  border-radius: 12px;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.1);
-  font-size: 0.8rem;
-  color: var(--text-mid);
-}
 .card-header {
   display: flex;
   align-items: center;
